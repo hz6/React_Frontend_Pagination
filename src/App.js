@@ -14,7 +14,9 @@ const App = () => {
       setPosts(res.data);
       setLoading(false);
     }
-  })
+
+    fetchPost();
+  }, [])
 
   return (
     <div className="App">
