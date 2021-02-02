@@ -46,6 +46,7 @@ const Pagination = ({ amountPerPage, totalAmount, currentPage, paginate }) => {
           </a>
         </li>
       </ul>
+      <p className="text-secondary">You are currently at page {currentPage}</p>
     </nav>
   )
 }
