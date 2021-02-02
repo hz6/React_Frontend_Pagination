@@ -9,9 +9,10 @@ const Posts = ({ posts, loading }) => {
   return (
     <ul className="list-group mb-4">
       {
-        posts.map((post) => {
-          return <li key={post.id} className="list-group-item mb-1">
-            {post.title}
+        posts.map((post, index) => {
+          return <li key={index} className="list-group-item mb-1">
+            <h4 className="text-secondary">{post.title}</h4>
+            <p>{post.body}</p>
           </li>
         })
       }
