@@ -1,27 +1,37 @@
-import React from 'react'
+import React from 'react';
 
 const Pagination = ({ amountPerPage, totalAmount, currentPage, paginate }) => {
+  // List of page numbers
   const pageNumbers = [];
 
   for (var i = 1; i <= Math.ceil(totalAmount / amountPerPage); i++) {
     pageNumbers.push(i)
   }
 
+  const backward = () => {
+    if (currentPage - 1 >= 1) {
+      paginate(currentPage - 1);
+    } else {
+      alert("This is already the first page")
+    }
+  }
+
+  const forward = () => {
+    if (currentPage + 1 <= pageNumbers.length) {
+      paginate(currentPage + 1)
+    } else {
+      alert("This is already the last page");
+    }
+  }
+
   return (
     <nav>
       <ul className="pagination">
         <li>
-          <a onClick={() => {
-            if (currentPage - 1 >= 1) {
-              paginate(currentPage - 1);
-              console.log("Previous page")
-            } else {
-              alert("This is already the first page")
-            }
-          }}
+          <a onClick={() => backward()}
             href="!#"
             className="page-link m-1">
-            Previous
+            Back
           </a>
         </li>
         {pageNumbers.map(number => {
@@ -33,13 +43,7 @@ const Pagination = ({ amountPerPage, totalAmount, currentPage, paginate }) => {
         })}
         <li>
           <a
-            onClick={() => {
-              if (currentPage + 1 <= pageNumbers.length) {
-                paginate(currentPage + 1)
-              } else {
-                alert("This is already the last page");
-              }
-            }}
+            onClick={() => forward()}
             href="!#"
             className="page-link m-1">
             Next

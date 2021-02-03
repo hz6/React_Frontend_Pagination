@@ -21,8 +21,6 @@ const App = () => {
     fetchPost();
   }, [])
 
-  // console.log(posts);
-
   // Get The Current Posts
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -35,7 +33,7 @@ const App = () => {
 
   return (
     <div className="container mt-5">
-      <h1 className="text-primary mb-3">My Blogs</h1>
+      <h1 className="text-primary mb-3">MY BLOGS</h1>
       <Posts posts={currentPosts} loading={loading} />
       <Pagination amountPerPage={postsPerPage} totalAmount={posts.length} currentPage={currentPage} paginate={setPage} />
     </div>

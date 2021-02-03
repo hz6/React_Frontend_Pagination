@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Posts = ({ posts, loading }) => {
   if (loading) {
@@ -7,17 +7,19 @@ const Posts = ({ posts, loading }) => {
 
 
   return (
-    <ul className="list-group mb-4">
+    <ul className="list-group mb-2">
       {
         posts.map((post, index) => {
-          return <li key={index} className="list-group-item mb-1">
-            <h4 className="text-secondary">{post.title}</h4>
-            <p>{post.body}</p>
-          </li>
+          return (
+            <li key={index} className="list-group-item">
+              <h4 className="text-secondary">{post.title}</h4>
+              <p>{post.body}</p>
+            </li>
+          )
         })
       }
     </ul>
   )
 }
 
-export default Posts
+export default Posts;
