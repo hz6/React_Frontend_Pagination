@@ -12,8 +12,7 @@ const Posts = ({ posts, loading }) => {
         posts.map((post, index) => {
           return (
             <li key={index} className="list-group-item">
-              <h4 className="text-secondary">{post.title}</h4>
-              <p>{post.body}</p>
+              <h5 className="text-secondary">{post.title}</h5>
             </li>
           )
         })
