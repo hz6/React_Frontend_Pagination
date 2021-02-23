@@ -5,7 +5,6 @@ const Posts = ({ posts, loading }) => {
     return <h2>Loading...</h2>
   }
 
-
   return (
     <ul className="list-group mb-2">
       {

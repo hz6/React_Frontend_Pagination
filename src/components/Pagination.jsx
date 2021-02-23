@@ -27,27 +27,18 @@ const Pagination = ({ amountPerPage, totalAmount, currentPage, paginate }) => {
   return (
     <nav>
       <ul className="pagination">
+
+        <li> <a onClick={() => backward()} href="!#" className="page-link m-1">Back</a> </li>
+
+        {
+          pageNumbers.map(number => {
+            return (
+              <li key={number} className="page-item"> <a onClick={() => paginate(number)} href="!#" className="page-link m-1">{number}</a> </li>
+            )
+          })
+        }
         <li>
-          <a onClick={() => backward()}
-            href="!#"
-            className="page-link m-1">
-            Back
-          </a>
-        </li>
-        {pageNumbers.map(number => {
-          return (<li key={number} className="page-item">
-            <a onClick={() => paginate(number)} href="!#" className="page-link m-1">
-              {number}
-            </a>
-          </li>)
-        })}
-        <li>
-          <a
-            onClick={() => forward()}
-            href="!#"
-            className="page-link m-1">
-            Next
-          </a>
+          <a onClick={() => forward()} href="!#" className="page-link m-1">Next</a>
         </li>
       </ul>
       <p className="text-secondary">You are currently at page {currentPage}</p>
